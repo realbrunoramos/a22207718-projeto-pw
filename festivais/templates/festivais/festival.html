@@ -1,0 +1,81 @@
+{% extends 'festivais/layout.html' %}
+
+{% block title %}Detalhes do Festival - {{ festival.nome }}{% endblock %}
+
+{% block content %}
+    <style>
+        /* Adicione os estilos CSS aqui */
+        .festival-card {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            color: black;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .festival-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .festival-location {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .festival-image {
+            margin-bottom: 15px;
+        }
+
+        .band-list {
+            margin-top: 20px;
+        }
+
+        .band-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .band-list li {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .band-list li:before {
+            content: "\2022";
+            color: #777;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+
+    <div class="festival-card">
+        <h2 class="festival-title">{{ festival.nome }}</h2>
+        <p class="festival-location">Localização: {{ festival.localizacao }}</p>
+        
+        <p><strong>Link para os festivais:</strong> <a href="{{ festival.link_festival }}" target="_blank">{{ festival.link_festival }}</a></p>
+        
+        {% if festival.foto %}
+            <div class="festival-image">
+                <img src="{{ festival.foto.url }}" alt="{{ festival.nome }}">
+            </div>
+        {% endif %}
+        
+        <hr>
+        
+        <div class="band-list">
+            <ul>
+                <strong>Bandas que irão comparecer:</strong>
+                {% for banda in festival.bandas.all %}
+                    <li>{{ banda.nome }} | Genero Musical: {{ banda.genero }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

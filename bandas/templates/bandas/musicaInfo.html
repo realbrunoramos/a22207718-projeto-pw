@@ -1,0 +1,16 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <li>
+        <a href="javascript:window.history.back();" style="display: block; text-align: center;">
+            <h2>voltar</h2>
+        </a>
+    </li>
+    <h1>Detalhes da Música "{{ musica.titulo }}"</h1>
+    <p>Duração: {{ musica.duracao }}</p>
+    <p>Link do YouTube: <a href="{{ musica.link_spotify }}">{{ musica.link_spotify }}</a></p>
+    
+    <h2>Vídeo do YouTube</h2>
+    <embed width="560" height="315" src="{{ musica.link_spotify }}" frameborder="0" allowfullscreen></embed>
+
+{% endblock %}

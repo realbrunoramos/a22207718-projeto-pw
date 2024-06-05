@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Acadêmico</title>
+    <style>
+
+        body {
+            background: #f5f5f5; /* Altera a cor de fundo do body */
+            color: #333; /* Altera a cor do texto */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: #333; /* Altera a cor dos links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #666; /* Altera a cor dos links ao passar o mouse */
+        }
+
+        header {
+            padding: 20px 0; /* Adiciona espaçamento interno ao header */
+            text-align: center;
+            background-color: #fff; /* Adiciona um fundo branco ao header */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombreado suave ao header */
+            border-bottom: 1px solid #ddd; /* Adiciona uma borda inferior */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        button {
+            background-color: #666; /* Altera a cor de fundo do botão */
+            color: #fff; /* Altera a cor do texto do botão */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px; /* Adiciona bordas arredondadas ao botão */
+            transition: background-color 0.3s ease; /* Adiciona transição suave */
+        }
+
+        button:hover {
+            background-color: #555; /* Altera a cor de fundo do botão ao passar o mouse */
+        }
+
+        main {
+            flex: 1;
+            margin: 20px;
+            background-color: #fff; /* Adiciona um fundo branco ao conteúdo principal */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombreado suave */
+            border-radius: 4px; /* Adiciona bordas arredondadas */
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #fff; /* Adiciona um fundo branco ao footer */
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #ddd; /* Adiciona uma borda superior */
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mundo Acadêmico</h1>
+    <a href="{% url 'curso:intro_view' %}"><button>Home</button></a>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>Mundo Acadêmico By Bruno Ramos</p>
+</footer>
+
+</body>
+</html>

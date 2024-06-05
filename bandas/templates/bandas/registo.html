@@ -1,0 +1,16 @@
+
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'bandas:registo' %}">
+  {% csrf_token %}
+  <label for="username">Nome de Utilizador:</label>
+  <input type="text" id="username" name="username" required>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <label for="password">Senha:</label>
+  <input type="password" id="password" name="password" required>
+  <button type="submit">Registrar</button>
+</form>
+
+{% endblock %}

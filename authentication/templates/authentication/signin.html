@@ -1,0 +1,23 @@
+{% extends 'authentication/layout.html' %}
+
+{% block content %}
+    <h3>Registo</h3>
+
+    <form action="{% url 'authentication:signin' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="exemplo: fizzburst744">
+      <br>
+      <input type="text" name="nome" placeholder="exemplo: Ruca">
+      <br>
+      <input type="text" name="apelido" placeholder="exemplo: Silva">
+      <br>
+      <input type="email" name="email" placeholder="exemplo: rucasilva@dominio.com">
+      <br>
+      <input type="password" name="password" placeholder="Defina a sua Palavra-chave..">
+      <br>
+      <input type="submit" value="Criar">
+    </form>
+
+    <a href="{% url 'authentication:login_view' %}">Cancelar</a>
+
+{% endblock %}

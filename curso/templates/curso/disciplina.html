@@ -1,0 +1,14 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <ul>
+    {% for curso in cursos %}
+        <li>
+            <strong>Disciplina:</strong> {{ disciplina.nome }} <br>
+
+        </li>
+
+    {% endfor %}
+    </ul>
+{% endblock %}
+

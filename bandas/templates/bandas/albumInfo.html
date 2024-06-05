@@ -1,0 +1,26 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <li>
+        <a href="javascript:window.history.back();" style="display: block; text-align: center;">
+            <h2>voltar</h2>
+        </a>
+    </li>
+    <h1>Detalhes do Álbum "{{ album.titulo }}"</h1>
+    <p>Banda: {{ album.banda.nome }}</p>
+    <p>Data de Lançamento: {{ album.lancamento }}</p>
+
+    <ul>
+        <img src="{{ album.capa.url }}" alt="Capa do Álbum" style="width: 400px; height: auto;">
+    </ul>
+
+    <h2>Músicas do Álbum:</h2>
+    <ul>
+    {% for musica in musicas %}
+        <li><a href="{% url 'bandas:musicainfo' musica.id %}">{{ musica.titulo }}</a></li>
+
+    {% endfor %}
+    </ul>
+
+
+{% endblock %}

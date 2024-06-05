@@ -1,0 +1,14 @@
+{  "projetos": [
+    {
+      "projeto": "Sistema de Gestão de Bibliotecas",
+      "disciplina_id": 1,
+      "ano": 2024,
+      "semestre": 2,
+      "descricao": "Desenvolvimento de um sistema para gerenciar bibliotecas",
+      "conceitos_aplicados": "Programação orientada a objetos, SQL",
+      "link_video": "https://www.youtube.com/watch?v=example",
+      "link_gitHub": "https://github.com/example"
+    }
+  ],
+
+}

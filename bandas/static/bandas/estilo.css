@@ -1,0 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+div.container > *{  
+  padding: 1rem;  
+}
+a.home-button {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+a.login-button {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+a.login-button:hover {
+  background-color: #777;
+  color: white;
+  padding: 10px;
+}
+a.home-button:hover {
+  background-color: #777;
+  color: white;
+  padding: 10px;  
+}
+
+div.container{
+  height : 600px;
+  background-color: #000D26;
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  gap: 2px;
+  grid-template-rows: 10vh 6fr 1fr;
+}
+.div_title{
+  grid-area: title;
+}
+.div_buttons{
+  grid-area: buttons;
+}
+.back{
+  grid-area: back;
+}
+.back>img{
+  
+  width:20px;
+  height:30px;
+}
+
+img {
+  transition: transform 0.2s ease;
+}
+
+img:hover {
+  transform: scale(0.95);
+}
+
+header {
+  grid-area: header;
+  background-color: black;
+  display: grid;
+  grid-template-areas:
+    'back title buttons';
+  grid-template-columns: 5vh 3fr 1fr;
+}
+
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+  background-color: #000417;
+}

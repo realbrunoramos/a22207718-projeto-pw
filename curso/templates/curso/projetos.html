@@ -1,0 +1,14 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <ul>
+    {% for project in projetos %}
+        <li>
+            <a href="{% url 'curso:project_details' project.id %}">
+                <strong>Name:</strong> {{ project.projeto }} <br>
+            </a>
+        </li>
+        <br>
+    {% endfor %}
+    </ul>
+{% endblock %}

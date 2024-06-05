@@ -1,0 +1,12 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <h1>Project Details</h1>
+    <p><strong>Name:</strong> {{ project.projeto }}</p>
+    <p><strong>Ano:</strong> {{ project.ano }}</p>
+    <p><strong>Semestre:</strong> {{ project.semestre }}</p>
+    <p><strong>Descrição:</strong> {{ project.descricao }}</p>
+    <p><strong>Conceitos Aplicados:</strong> {{ project.conceitos_aplicados }}</p>
+    <p><a href="{{ project.link_video }}"><strong>Link youtube: </strong>{{ project.link_video }}</a></p>
+    <p><a href="{{ project.link_gitHub }}"><strong>Link gitHub: </strong>{{ project.link_gitHub }}</a></p>
+{% endblock %}

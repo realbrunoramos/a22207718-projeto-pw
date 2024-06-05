@@ -1,0 +1,25 @@
+{% extends 'authentication/layout.html' %}
+
+{% block content %}
+
+    <a href="{% url 'authentication:logout' %}">Logout</a>
+
+    <h1>Bemvido, {{request.user.first_name}} {{request.user.last_name}}</h1>
+
+    <br>
+
+    <h3>Suas aplicações:</h3>
+    <u>
+    <a href="{% url 'bandas:pagina_inicial' %}">Bandas</a>
+    </u>
+    <br>
+
+    <u>
+    <a href="{% url 'curso:intro_view' %}">Curso</a>
+    </u>
+    <br>
+
+    <u>
+    <a href="{% url 'artigos:lista_artigos' %}">Artigos</a>
+    </u>
+{% endblock %}

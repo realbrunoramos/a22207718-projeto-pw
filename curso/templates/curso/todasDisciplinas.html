@@ -1,0 +1,15 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <h2>{{ curso.apresentacao }}</h2>
+
+    <ul>
+        {% for disciplina in disciplinas %}
+            <li>
+                <a href="{% url 'curso:disciplina_details' disciplina.id %}">
+                    {{ disciplina.nome }}<br>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

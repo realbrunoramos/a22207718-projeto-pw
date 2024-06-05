@@ -1,0 +1,12 @@
+{  "linguagens_programacao": [
+    {
+      "nome": "Python",
+      "disciplina_id": 1
+    },
+    {
+      "nome": "SQL",
+      "disciplina_id": 2
+    }
+  ],
+
+}

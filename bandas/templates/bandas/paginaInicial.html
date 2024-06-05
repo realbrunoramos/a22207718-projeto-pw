@@ -1,0 +1,18 @@
+{% extends 'bandas/layout.html' %}
+
+{% block content %}
+    <h1>Lista de Bandas</h1>
+    <ul class="horizontal-cards">
+        {% for banda in bandas %}
+            <li class="li_bandas">
+                <a href="{% url 'bandas:bandalbuns' banda.id %}">
+                    <img class="banda_foto" src="{{ banda.foto.url }}" alt="Foto da Banda">
+                    <div style="position: absolute; top: 0; left: 0; background-color: rgba(7, 7, 7, 0.7); padding: 10px;">
+                        <h3>{{ banda.nome }}</h3>
+                    </div>
+                </a>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+{% endblock %}

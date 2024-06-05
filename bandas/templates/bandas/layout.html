@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+  <head>
+        <title>Music Culture</title>
+        <link rel="stylesheet" href="{% static 'bandas/estilo.css' %}">
+  </head>
+  <body>
+    <div class="container">
+    <header>
+      <div class="div_title"><h1>Music Culture</h1></div>
+      <div class="div_buttons">
+        <a class= "home-button" href="{% url 'bandas:pagina_inicial' %}">Home</a>
+        <a class= "login-button" href="{% url 'authentication:login_view' %}">Login</a>
+      </div>
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    <footer>
+      <p>Music Culture By Bruno Ramos</p>
+    </footer>
+  </div>
+  </body>
+</html>

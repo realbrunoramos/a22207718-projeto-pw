@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+div.container > *{
+  padding: 1rem;
+}
+a.home-button {
+  text-decoration: none;
+  color: white;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+a.login-button {
+  text-decoration: none;
+  color: white;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+a.login-button:hover {
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+a.home-button:hover {
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+.horizontal-cards {
+    display: flex;
+}
+.banda-albuns {
+    display: flex;
+}
+.li_bandas{
+    position: relative;
+    display: inline-block;
+}
+div.container{
+    height: 100%;
+    background-color: #000D26;
+    display: grid;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+    gap: 2%;
+    grid-template-rows: 12% 80% 8%;
+}
+.banda_foto{
+    width: 300px;
+    height: auto;
+}
+.div_title{
+  grid-area: title;
+}
+.div_buttons{
+  grid-area: buttons;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+li img {
+    margin-right: 10px;
+}
+
+img {
+  transition: transform 0.2s ease;
+}
+
+img:hover {
+  transform: scale(0.95);
+}
+
+header {
+  grid-area: header;
+  background-color: black;
+  display: grid;
+  grid-template-areas:
+    'title buttons';
+  grid-template-columns:  3fr 1fr;;
+}
+@media (max-width: 600px) {
+    ul{
+        flex-direction: column;
+    }
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+  margin-bottom: 0;
+  background-color: #000417;
+}

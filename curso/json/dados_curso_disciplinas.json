@@ -1,0 +1,18 @@
+{  "disciplinas": [
+    {
+      "nome": "Programação",
+      "ano": 1,
+      "semestre": 1,
+      "ects": 6,
+      "curricular_IUnit_Readable_Code": "INF112"
+    },
+    {
+      "nome": "Bases de Dados",
+      "ano": 1,
+      "semestre": 2,
+      "ects": 6,
+      "curricular_IUnit_Readable_Code": "INF114"
+    }
+  ],
+
+}

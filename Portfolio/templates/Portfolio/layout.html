@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno's Website</title>
+    <link rel="stylesheet" href="{% static 'Portfolio/estilo.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<nav>
+    <div>
+        <a href="{% url 'Portfolio:home' %}">Home</a>
+        <a href="{% url 'Portfolio:meByme' %}">MeByMe</a>
+        <a href="{% url 'Portfolio:WebWizardry' %}">WebWizardry</a>
+        <a href="{% url 'Portfolio:automation' %}">Automation</a>
+        <a href="{% url 'Portfolio:projects' %}">Projects</a>
+    </div>
+
+    <div>
+        <a href="{% url 'Meteo:home' %}"><i class="fas fa-cloud-sun"></i> Weather</a>
+        <a href="{% url 'authentication:login_view' %}" id="loginButton"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="#" id="darkModeToggle"><i class="fas fa-moon"></i></a>
+    </div>
+</nav>
+
+
+{% block content %}
+
+
+
+{% endblock %}
+
+<div id="clock"></div>
+
+<script>
+    // Dark mode toggle
+    const toggleButton = document.getElementById('darkModeToggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+    });
+
+    // Clock
+    function updateClock() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+</body>
+</html>

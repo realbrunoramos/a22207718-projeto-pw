@@ -1,0 +1,14 @@
+{
+  "cursos": [
+    {
+      "apresentacao": "Curso de Engenharia Informática",
+      "objectivos": "Formar engenheiros informáticos qualificados",
+      "competencias": "Desenvolvimento de software, segurança da informação"
+    },
+    {
+      "apresentacao": "Curso de Ciência de Dados",
+      "objectivos": "Formar especialistas em análise de dados",
+      "competencias": "Análise estatística, machine learning"
+    }
+  ]
+}
