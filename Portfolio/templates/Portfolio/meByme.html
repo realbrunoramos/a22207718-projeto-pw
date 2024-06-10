@@ -1,10 +1,12 @@
 {% extends 'Portfolio/layout.html' %}
 {% load static %}
 {% block content %}
-
-<div id="meByMe" class="content">
+<div class="content">
     <h2>MeByMe</h2>
     <div class="flex-container">
+        <a href="{% static 'Portfolio/Bruno Ramos - CV (programmer).pdf' %}" type="application/pdf" target="_blank">
+        <img src="{%static 'Portfolio/brunoFormal_bottomFade_NoBG.png'%}" width=500px >
+        </a>
         <div class="flex-item">
             <h3>Sobre Mim</h3>
             <p>Sou Bruno, estudante de Ciência da Computação e Engenharia. Tenho paixão pelo mundo digital, criação de jogos, aplicações móveis e desktop, e cartoons. Desenho digitalmente como hobby e estou a aprofundar os meus conhecimentos em Java e outras tecnologias de programação.</p>
@@ -28,5 +30,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

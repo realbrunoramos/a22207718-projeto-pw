@@ -1,9 +1,58 @@
 {% extends 'Portfolio/layout.html' %}
 {% load static %}
 {% block content %}
+<div class="projects-container">
+    <h1>Projects</h1>
+    <div class="cards-container">
 
-<div id="projects" class="content">
-    <h2>My projects</h2>
+        <div class="card">
+            <a href="{% url 'bandas:pagina_inicial' %}" class="card-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/1746/1746777.png" alt="Bandas" class="card-image">
+                <div class="card-content">
+                    <h2>App Bandas</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="{% url 'curso:intro_view' %}" class="card-link">
+                <img src="https://th.bing.com/th/id/R.2242a2202fb8e8717b1c46cd46d22dda?rik=NJ8JGKgTc91Lgg&pid=ImgRaw&r=0" alt="Curso" class="card-image">
+                <div class="card-content">
+                    <h2>App Curso</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="{% url 'festivais:lista_festivais' %}" class="card-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/9457/9457853.png" alt="festivais" class="card-image">
+                <div class="card-content">
+                    <h2>App Festivais</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="{% url 'artigos:lista_artigos' %}" class="card-link">
+                <img src="https://cdn-icons-png.flaticon.com/512/443/443404.png" alt="artigos" class="card-image">
+                <div class="card-content">
+                    <h2>App Artigos</h2>
+                </div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="{% url 'Meteo:home' %}" class="card-link">
+                <img src="https://cdn.icon-icons.com/icons2/1548/PNG/512/cloud_107348.png" alt="meteo" class="card-image">
+                <div class="card-content">
+                    <h2>App Meteo</h2>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
 </div>
-
 {% endblock %}
+
+

@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bruno's Website</title>
+    <title>Bruno Ramos</title>
+    <link rel="stylesheet" href="{% static 'Portfolio/estilo.css' %}">
     <link rel="stylesheet" href="{% static 'Portfolio/estilo.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="{% static 'Portfolio/BR.png' %}" type="image/x-png">
 </head>
 <body>
 
@@ -26,23 +28,18 @@
     </div>
 </nav>
 
-
 {% block content %}
-
-
-
 {% endblock %}
+
 
 <div id="clock"></div>
 
 <script>
-    // Dark mode toggle
     const toggleButton = document.getElementById('darkModeToggle');
     toggleButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
     });
 
-    // Clock
     function updateClock() {
         const now = new Date();
         const hours = now.getHours().toString().padStart(2, '0');
@@ -53,5 +50,8 @@
     setInterval(updateClock, 1000);
     updateClock();
 </script>
+<footer>
+    <p>&copy; 2024 Bruno Ramos. Todos os direitos reservados.</p>
+</footer>
 </body>
 </html>

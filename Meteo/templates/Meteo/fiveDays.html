@@ -3,13 +3,12 @@
 {% block content %}
 
     <div class= "textSection">
-        Bem-vindo ao seu portal de meteorologia para Lisboa! Aqui você encontra previsões do tempo precisas e atualizadas para a capital portuguesa. Consulte a temperatura, condições climáticas, umidade, velocidade do vento e muito mais.
+        Bem-vindo ao seu portal de meteorologia para Lisboa! Aqui você encontra previsões do tempo precisas e atualizadas para a capital portuguesa.
     </div>
-
     <a href="{% url 'Meteo:home' %}" class="weather-details">Ocultar próximos dias</a>
+
     <div class="weather-cards-container">
         {% for i in weatherDetailsList %}
-
             <div class="weather-card">
                 <div class="weather-header">
                     <h3 class="date"><strong>{{ i.dataHoje }}</strong></h3>
@@ -17,6 +16,7 @@
                 <div class="weather-info">
                     <p class="min-tempature"><strong>Mínima:</strong> {{ i.temperaturaMin }}</p>
                     <p class="max-tempature"><strong>Máxima:</strong> {{ i.temperaturaMax }}</p>
+                    <p class="precipita"><strong>Precipitação:</strong> {{i.precipitacao}}</p>
                     <p class="description">Com {{ i.tempDesc }}</p>
                     <img class="weather-icon" src="{% static 'Meteo/img/' %}{{i.svgFile}}" alt="weather icon">
                 </div>

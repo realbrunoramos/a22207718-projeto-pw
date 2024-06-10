@@ -13,5 +13,5 @@ urlpatterns = [
     path('festivais/', include('festivais.urls')),
     path('authentication/', include('authentication.urls')),
     path('Meteo/', include('Meteo.urls')),
-    path('Portfolio/', include('Portfolio.urls')),
+    path('', include('Portfolio.urls')),
 ]

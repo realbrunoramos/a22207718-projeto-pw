@@ -38,7 +38,8 @@ def home(request):
         if item['idWeatherType'] == idWeather:
             tempDesc = item['descWeatherTypePT']
     context = {
-        "dataHoje" : data['dataUpdate'].split('T')[0],
+        "dataHoje" : data['data'][0]['forecastDate'],
+        "precipitacao" : data['data'][0]['precipitaProb'],
         "temperaturaMin" : data['data'][0]['tMin'] + "ºC",
         "temperaturaMax" : data['data'][0]['tMax'] + "ºC",
         "tempDesc" : tempDesc.lower(),
@@ -76,6 +77,7 @@ def fiveDays(request):
     for n in data['data']:
         weatherDetails = {}
         weatherDetails["dataHoje"] = n['forecastDate']
+        weatherDetails["precipitacao"] = n['precipitaProb']
         weatherDetails["temperaturaMin"] = n['tMin'] + "ºC"
         weatherDetails["temperaturaMax"] = n['tMax'] + "ºC"
         weatherDetails["tempDesc"] = allDesc[n['idWeatherType']]
