@@ -1,25 +1,24 @@
-{% extends 'authentication/layout.html' %}
+{% extends 'authentication/base.html' %}
 
 {% block content %}
-    <h3>Login</h3>
+<h3>Login</h3>
 
-    {% if mensagem %}
-      <p>mensagem: {{ mensagem }}</p>
-    {% endif %}
+{% if mensagem %}
+<p>{{ mensagem }}</p>
+{% endif %}
 
-    <form action="{% url 'authentication:login_view' %}" method="post">
-      {% csrf_token %}
-      <input type="text" name="username" placeholder="Username..">
-      <input type="password" name="password" placeholder="Palavra-chave..">
-      <input type="submit">
-    </form>
+<form action="{% url 'authentication:login_view' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username..">
+    <input type="password" name="password" placeholder="Palavra-chave..">
+    <button type="submit">Login</button>
+</form>
 
-    <a href="{% url 'authentication:signin' %}">
-      <button>Registar</button>
-    </a>
+<a href="{% url 'authentication:signin' %}">
+    <button>Registar</button>
+</a>
 
-    <a href="{% url 'authentication:recover_password' %}">
-      <button>Recuperar Palavra-chave</button>
-    </a>
-
+<a href="{% url 'authentication:recover_password' %}">
+    <button>Recuperar Palavra-chave</button>
+</a>
 {% endblock %}

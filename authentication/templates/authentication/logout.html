@@ -1,0 +1,8 @@
+{% extends 'authentication/base.html' %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+    <h3>Você foi deslogado com sucesso.</h3>
+    <a href="{% url 'authentication:login_view' %}">Logar novamente</a>
+{% endblock %}

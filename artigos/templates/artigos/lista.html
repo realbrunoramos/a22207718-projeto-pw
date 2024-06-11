@@ -1,0 +1,20 @@
+{% extends 'artigos/layout.html' %}
+
+{% block content %}
+<h1>Lista de Artigos</h1>
+<div class="articles">
+    {% for artigo in artigos %}
+        <div class="article-card">
+            <h2>{{ artigo.titulo }}</h2>
+            <p>{{ artigo.conteudo|truncatewords:20 }}</p>
+            <p><small>Por {{ artigo.autor }} em {{ artigo.data_publicacao }}</small></p>
+        </div>
+    {% endfor %}
+</div>
+
+{% if user.is_authenticated %}
+    <div class="new-article">
+        <a href="{% url 'artigos:novo_artigo' %}" class="btn">Publicar Novo Artigo</a>
+    </div>
+{% endif %}
+{% endblock %}

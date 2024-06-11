@@ -1,11 +1,11 @@
-{% extends 'authentication/layout.html' %}
+{% extends 'authentication/base.html' %}
 
 {% block content %}
     <h3>Registo</h3>
 
     <form action="{% url 'authentication:signin' %}" method="post">
       {% csrf_token %}
-      <input type="text" name="username" placeholder="exemplo: fizzburst744">
+      <input type="text" name="username" placeholder="exemplo: ruca12">
       <br>
       <input type="text" name="nome" placeholder="exemplo: Ruca">
       <br>

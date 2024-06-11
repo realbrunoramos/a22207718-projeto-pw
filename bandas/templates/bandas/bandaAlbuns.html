@@ -7,9 +7,9 @@
         </a>
     </li>
     <h1>Álbuns da Banda {{ banda.nome }}</h1>
+    <h3>A banda {{ banda.nome }} possui {{numMusicas}} músicas e {{numAlbuns}} albuns.</h3>
     <ul class="banda-albuns">
         {% for album in albuns %}
-
                 <br>
             <div>
                 <h2>{{ album.titulo }}</h2>

@@ -1,75 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artigos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Adicione outros estilos CSS personalizados aqui -->
-    <style>
-        body {
-            background-color: #222;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            position: relative;
-            color: #ddd;
-        }
-
-        .navbar {
-            background-color: black;
-            color: white;
-        }
-
-        .navbar-brand {
-            color: black;
-        }
-
-        .navbar-nav .nav-link {
-            color: black;
-        }
-
-        .footer {
-            background-color: #333;
-            color: #ddd;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>Artigos de Bruno</title>
+    <link rel="stylesheet" href="{% static 'artigos/estilo.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#">Meu Site de Artigos</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'artigos:lista_artigos' %}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <!-- Adicione outros links de navegação conforme necessário -->
-        </ul>
-        <!-- Adicione qualquer elemento HTML adicional à direita da barra de navegação, se necessário -->
+<nav>
+    <div>
+        <a href="{% url 'artigos:lista_artigos' %}">Artigos</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'artigos:novo_artigo' %}">Novo Artigo</a>
+            <a href="{% url 'authentication:logout_view' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'authentication:login_view' %}">Login</a>
+        {% endif %}
     </div>
 </nav>
 
-<div class="container mt-5">
+<div class="container">
     {% block content %}
     {% endblock %}
 </div>
 
-<footer class="footer py-3">
-    <div class="container text-center">
-        <span>Meu Site de Artigos By Bruno Ramos</span>
-    </div>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

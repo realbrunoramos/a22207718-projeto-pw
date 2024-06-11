@@ -157,7 +157,6 @@ footer {
     color: white;
 }
 
-/* Media Queries */
 @media (max-width: 1200px) {
     .card {
         width: calc(50% - 2rem);

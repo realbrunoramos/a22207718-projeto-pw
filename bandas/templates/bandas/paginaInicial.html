@@ -15,4 +15,20 @@
             <br>
         {% endfor %}
     </ul>
+    <br>
+    <div class="favBottun"><a href="{% url 'bandas:musica_favorita' %}" class="favorite-music-button">Minha Música Favorita</a></div>
+    <br>
+    <button id="loadBandasButton">Carregar Nomes das Bandas</button>
+    <div id="bandasJson"></div>
+
+    <script>
+        document.getElementById('loadBandasButton').addEventListener('click', function() {
+            fetch("{% url 'bandas:bandas_json' %}")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('bandasJson').innerText = JSON.stringify(data.bandas, null, 2);
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
 {% endblock %}

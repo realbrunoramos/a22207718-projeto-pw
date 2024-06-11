@@ -1,31 +1,22 @@
-*{
+* {
   margin: 0;
   color: white;
   font-family: "Roboto", sans-serif;
 }
-div.container > *{
+
+div.container > * {
   padding: 1rem;
 }
-a.home-button {
+
+a.home-button, a.login-button, .favorite-music-button {
   text-decoration: none;
   color: white;
   padding: 7px;
   border-radius: 10px;
   cursor: pointer;
 }
-a.login-button {
-  text-decoration: none;
-  color: white;
-  padding: 7px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-a.login-button:hover {
-  background-color: white;
-  color: black;
-  padding: 10px;
-}
-a.home-button:hover {
+
+a.home-button:hover, a.login-button:hover, .favorite-music-button:hover {
   background-color: white;
   color: black;
   padding: 10px;
@@ -34,14 +25,17 @@ a.home-button:hover {
 .horizontal-cards {
     display: flex;
 }
+
 .banda-albuns {
     display: flex;
 }
-.li_bandas{
+
+.li_bandas {
     position: relative;
     display: inline-block;
 }
-div.container{
+
+div.container {
     height: 100%;
     background-color: #000D26;
     display: grid;
@@ -52,16 +46,20 @@ div.container{
     gap: 2%;
     grid-template-rows: 12% 80% 8%;
 }
-.banda_foto{
+
+.banda_foto {
     width: 300px;
     height: auto;
 }
-.div_title{
+
+.div_title {
   grid-area: title;
 }
-.div_buttons{
+
+.div_buttons {
   grid-area: buttons;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -91,18 +89,47 @@ header {
   display: grid;
   grid-template-areas:
     'title buttons';
-  grid-template-columns:  3fr 1fr;;
+  grid-template-columns:  3fr 1fr;
 }
+
 @media (max-width: 600px) {
-    ul{
+    ul {
         flex-direction: column;
     }
 }
+
 main {
   grid-area: main;
 }
+
 footer {
   grid-area: footer;
   margin-bottom: 0;
   background-color: #000417;
+}
+
+#loadBandasButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+#loadBandasButton:hover {
+  background-color: #555;
+  color: white;
+  background-color: black;
+}
+
+#bandasJson {
+  margin-top: 20px;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  color: black;
+  word-wrap: break-word;
 }

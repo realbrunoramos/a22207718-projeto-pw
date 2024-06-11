@@ -10,4 +10,6 @@ urlpatterns = [
     path('albuminfo/<int:album_id>/', views.albuminfo_view, name='albuminfo'),
     path('musicainfo/<int:musica_id>/', views.musicainfo_view, name='musicainfo'),
     path('bandalbuns/<int:banda_id>/', views.bandalbuns_view, name='bandalbuns'),
+    path('musica-favorita/', views.musica_favorita, name='musica_favorita'),
+    path('bandas-json/', views.bandas_json_view, name='bandas_json'),
 ]
